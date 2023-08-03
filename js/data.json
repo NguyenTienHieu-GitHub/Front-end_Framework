@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "ten": "SÁCH TOÁN LỚP 1",
+      "gia": 16000,
+      "hangMuc":"SGK",
+      "hinh": "img/sach-1.jpg"
+    },
+    {
+      "id": 2,
+      "ten": "SÁCH TOÁN LỚP 3",
+      "gia": 15000,
+      "hangMuc":"SGK",
+      "hinh": "img/sach-3.jpg"
+    },
+    {
+      "id": 3,
+      "ten": "SÁCH TOÁN LỚP 5",
+      "gia": 14000,
+      "hangMuc":"SGK",
+      "hinh": "img/sach-5.jpg"
+    },
+    {
+      "id": 4,
+      "ten": "SÁCH TIẾNG ANH LỚP 7",
+      "gia": 13000,
+      "hangMuc":"SGK",
+      "hinh": "img/sach-7.jpg"
+    },
+    {
+      "id": 5,
+      "ten": "SÁCH TIẾNG ANH LỚP 7",
+      "gia": 12000,
+      "hangMuc":"SGK",
+      "hinh": "img/sach-8.jpg"
+    },
+    {
+      "id": 6,
+      "ten": "SÁCH TIẾNG ANH LỚP 7",
+      "gia": 11000,
+      "hangMuc":"SGK",
+      "hinh": "img/sach-9.jpg"
+    }
+  ]
+  

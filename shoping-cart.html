@@ -1,0 +1,42 @@
+
+    <div class="container">
+        
+    <header class="mt-5 text-dark py-3">
+        <h1 class="text-center">Your Shopping Cart</h1>
+    </header>
+    <main class="my-4 row" >
+        <section class="cart-items col-md-8 me-0">
+            <table class="table text-center" >
+                <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Total</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="sp in gioHang">
+                        <td>{{$index +1 }}</td>
+                        <td><img src="{{sp.hinh}}" alt="Product 1" class="img-fluid cart-image"></td>
+                        <td>{{sp.ten}}</td>
+                        <td><input type="number" ng-model="sp.soluong"></td>
+                        <td>{{sp.gia}}</td>
+                        <td>{{sp.gia*sp.soluong}}</td>
+                        <td><button class="btn btn-danger remove-button" ng-click="xoaSanPham(sp)">Xóa</button></td>
+                    </tr>
+                    <!-- Add more cart items here -->
+                </tbody>
+            </table>
+        </section>
+        <div class="col-md-1"></div>
+        <section class="cart-summary pt-3 col-md-3">
+            <h2 class="mb-3">Cart Summary</h2>
+            <p>Total: {{tinhTongThanhTien()}}đ</p>
+            <button class="btn btn-success checkout-button">Checkout</button>
+        </section>
+    </main>
+</div>
