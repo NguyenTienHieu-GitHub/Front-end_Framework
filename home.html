@@ -24,7 +24,7 @@
 								</p>
 								<div class="col-3"></div>
 								<button class="btn btn-success col-3 py-3"><a
-										class="text-decoration-none text-white" href="shop.html">Shop Now</a></button>
+										class="text-decoration-none text-white" href="#!shop">Shop Now</a></button>
 							</div>
 						</div>
 					</div>
@@ -59,14 +59,14 @@
 						</div>
 						<div class="col-lg-6 mb-0 d-flex align-items-center">
 							<div class="text-align-left align-self-center  row">
-								<h1 class="h1 text-success">H!U Shop</h1>
+								<h1 class="h1 text-success">BookWoven</h1>
 								<h3 class="h2">Sách là tương lai</h3>
 								<p>
 									Sách không chỉ cung cấp kiến thức, mà còn là nguồn cảm hứng và sức mạnh để thay đổi thế giới.
 								</p>
 								<div class="col-3"></div>
 								<button class="btn btn-success col-3 py-3"><a
-										class="text-decoration-none text-white" href="shop.html">Shop Now</a></button>
+										class="text-decoration-none text-white" href="#!shop">Shop Now</a></button>
 							</div>
 						</div>
 					</div>
@@ -99,8 +99,8 @@
 			</div>
 			<div class="row"  >
 				<div class="col-lg-12">
-					<div class="row">
-						<div class="col-md-4" ng-repeat="sp in sanPham">
+					<div class="row row-cols-2 row-cols-md-4">
+						<div class="col" ng-repeat="sp in sanPham | filter:keyword |orderBy: sapxep| limitTo:phanTrang.gioiHan:(phanTrang.dangChon-1)*phanTrang.gioiHan">
 							<div class="card mb-4 product-wap rounded-0" >
 								<div class="card rounded-0">
 									<img class="card-img rounded-0 img-fluid" src="{{sp.hinh}}">
@@ -111,13 +111,13 @@
 														class="far fa-heart"></i></a></li>
 											<li><a class="btn btn-success text-white mt-2" href="#!shopingCart"><i
 														class="far fa-eye"></i></a></li>
-											<li><a class="btn btn-success text-white mt-2" href="#!shopingCart"><i
+											<li><a class="btn btn-success text-white mt-2" ng-click="themGioHang(sp)"><i
 														class="fas fa-cart-plus"></i></a></li>
 										</ul>
 									</div>
 								</div>
 								<div class="card-body">
-									<a href="shop-single.html" class="h3 text-decoration-none">{{sp.ten}}</a>
+									<a href="#!shopSingle" class="h3 text-decoration-none">{{sp.ten}}</a>
 									<ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
 										<li>{{sp.hangMuc}}</li>
 										<li class="pt-2">
@@ -148,11 +148,26 @@
 						</div>
 					</div>
 					<div div="row">
-						<a type="button" href="#!shop" class="btn btn-link">Xem thêm...</a>
+						<ul class="pagination pagination-lg justify-content-end">
+							<li class="page-item">
+								<a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" aria-label="Previous">
+								  <span aria-hidden="true">&laquo;</span>
+								</a>
+							  </li>
+							<li class="page-item disabled" class="{{($index+1==phanTrang.dangChon)?'active':''}}" ng-repeat="trang in [].constructor(phanTrang.sotrang) track by $index">
+								<button class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" ng-click="phanTrang.dangChon=$index+1">{{$index+1}}</button>
+							</li>
+							<li class="page-item">
+								<a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" aria-label="Next">
+								  <span aria-hidden="true">&raquo;</span>
+								</a>
+							  </li>
+						</ul>
 					</div>
 				</div>
 				</div>
 			</div>
+			
 		</div>
 	</section>
 	<!-- End Featured Product -->
