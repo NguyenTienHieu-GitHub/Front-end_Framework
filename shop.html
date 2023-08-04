@@ -3,22 +3,29 @@
 	<div class="row">
 
 		<div class="col-lg-3">
-			<h1 class="h2 pb-4">Thư mục</h1>
+			<h1 class="h2 pb-4">THƯ MỤC</h1>
 			<div class="accordion" id="accordionExample">
-				<div class="pb-3 row"> 
-					<button id="hover-Sidebars" class=" collapsed d-flex justify-content-between h3 text-decoration-none border-0 bg-white col-12"
+				<div class="pb-3 row">
+					<button id="hover-Sidebars"
+						class=" collapsed d-flex justify-content-between h3 text-decoration-none border-0 bg-white col-12"
 						type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
 						aria-controls="collapseOne"> Thể loại <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
 					</button>
 					<div id="collapseOne" class="collapse" aria-labelledby="headingOne"
 						data-bs-parent="#accordionExample">
 						<ul class="list-unstyled pl-3 mt-3 mx-3">
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Công nghệ thông tin</a></li>
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Học ngoại ngữ</a></li>
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Huyền bí - Giả tưởng</a></li>
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Khoa học - Kỹ thuật</a></li>
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Lịch sử - Trính trị</a></li>
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Thể thao - Nghệ thuật</a></li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Công nghệ thông
+									tin</a></li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Học ngoại ngữ</a>
+							</li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Huyền bí - Giả
+									tưởng</a></li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Khoa học - Kỹ
+									thuật</a></li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Lịch sử - Trính
+									trị</a></li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Thể thao - Nghệ
+									thuật</a></li>
 
 						</ul>
 					</div>
@@ -31,13 +38,16 @@
 					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 						data-bs-parent="#accordionExample">
 						<ul class="list-unstyled mt-3 mx-3">
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Sport</a></li>
-							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Luxury</a></li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Tiểu thuyết</a>
+							</li>
+							<li class=" border-bottom mb-3"><a class="text-decoration-none" href="#">Truyện wibu</a>
+							</li>
 						</ul>
 					</div>
 				</div>
-				<div class="pb-3 row" > 
-					<button class="collapsed d-flex justify-content-between h3 text-decoration-none border-0 bg-white col-12 me-0"
+				<div class="pb-3 row">
+					<button
+						class="collapsed d-flex justify-content-between h3 text-decoration-none border-0 bg-white col-12 me-0"
 						type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
 						aria-controls="collapseThree"> Giảm giá
 						<!-- <i class="translate-middle badge rounded-pill bg-danger text-white me-5">Hot</i>  -->
@@ -59,11 +69,11 @@
 				<div class="col-md-6">
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-						  <li class="breadcrumb-item text-decoration-none"><a href="#">Trang chủ</a></li>
-						  <li class="breadcrumb-item"><a href="#">Thể loại</a></li>
-						  <li class="breadcrumb-item active" aria-current="page">Sách</li>
+							<li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Trang chủ</a></li>
+							<li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Thể loại</a></li>
+							<li class="breadcrumb-item active text-dark" aria-current="page">Sách</li>
 						</ol>
-					  </nav>
+					</nav>
 				</div>
 				<div class="col-md-6 pb-4">
 					<div class="d-flex">
@@ -77,7 +87,8 @@
 				</div>
 			</div>
 			<div class="row row-cols-2 row-cols-md-4">
-				<div class="col-md-4" ng-repeat="sp in sanPham | filter:keyword |orderBy: sapxep| limitTo:phanTrang.gioiHan:(phanTrang.dangChon-1)*phanTrang.gioiHan">
+				<div class="col-md-4"
+					ng-repeat="sp in sanPham | filter:keyword |orderBy: sapxep| limitTo:phanTrang.gioiHan:(phanTrang.dangChon-1)*phanTrang.gioiHan">
 					<div class="card border-2 mb-4 product-wap rounded-0">
 						<div class="card rounded-0">
 							<img class="card-img rounded-0 img-fluid" src="{{sp.hinh}}">
@@ -88,7 +99,8 @@
 												class="far fa-heart"></i></a></li>
 									<li><a class="btn btn-success text-white mt-2" href="#!shopSingle"><i
 												class="far fa-eye"></i></a></li>
-									<li><a class="btn btn-success text-white mt-2" ng-click="themGioHang(sp)"><i
+									<li><a class="btn btn-success text-white mt-2" data-bs-toggle="modal"
+											data-bs-target="#exampleModal" ng-click="themGioHang(sp)"><i
 												class="fas fa-cart-plus"></i></a></li>
 								</ul>
 							</div>
@@ -124,23 +136,28 @@
 					</div>
 				</div>
 			</div>
-				<div div="row">
+			<div class="row">
 				<ul class="pagination pagination-lg justify-content-end">
 					<li class="page-item">
-						<a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" aria-label="Previous">
-						  <span aria-hidden="true">&laquo;</span>
+						<a class="page-link text-success rounded-0 mr-3 shadow-sm border-top-0 border-left-0" ng-click="changePage(phanTrang.dangChon - 1)" ng-disabled="phanTrang.dangChon === 1" aria-label="Previous">
+							<span aria-hidden="true">&laquo;</span>
 						</a>
-					  </li>
-					<li class="page-item disabled" class="{{($index+1==phanTrang.dangChon)?'active':''}}" ng-repeat="trang in [].constructor(phanTrang.sotrang) track by $index">
-						<button class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" ng-click="phanTrang.dangChon=$index+1">{{$index+1}}</button>
+					</li>
+					<li class="page-item" ng-repeat="trang in [].constructor(phanTrang.sotrang) track by $index">
+						<button class="page-link text-success rounded-0 mr-3 shadow-sm border-top-0 border-left-0"
+								ng-class="{ 'active': $index + 1 === phanTrang.dangChon }"
+								ng-click="phanTrang.dangChon = $index + 1">
+							{{$index + 1}}
+						</button>
 					</li>
 					<li class="page-item">
-						<a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" aria-label="Next">
-						  <span aria-hidden="true">&raquo;</span>
+						<a class="page-link text-success rounded-0 mr-3 shadow-sm border-top-0 border-left-0" ng-click="changePage(phanTrang.dangChon + 1)" ng-disabled="phanTrang.dangChon === phanTrang.sotrang" aria-label="Next">
+							<span aria-hidden="true">&raquo;</span>
 						</a>
-					  </li>
+					</li>
 				</ul>
 			</div>
+
 		</div>
 	</div>
 

@@ -1,7 +1,7 @@
 <div class="container">
         
     <header class="mt-5 text-dark py-3">
-        <h1 class="text-center">Your Shopping Cart</h1>
+        <h1 class="text-center">Giỏ Hàng Của Bạn</h1>
     </header>
     <main class="my-4 row" >
         <section class="cart-items col-md-8 me-0">
@@ -10,11 +10,11 @@
                     <thead>
                         <tr>
                             <th scope="col">STT</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Total</th>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Thành tiền</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -22,7 +22,7 @@
                     <tbody>
                         <tr ng-repeat="sp in gioHang">
                             <td>{{$index +1 }}</td>
-                            <td><img src="{{sp.hinh}}" alt="Product" class="img-fluid cart-image"></td>
+                            <td><a href="#!shopSingle"><img src="{{sp.hinh}}" alt="Product" class="img-fluid cart-image"></a></td>
                             <td>{{sp.ten}}</td>
                             <td>
                                 <div class="d-flex">
@@ -34,7 +34,7 @@
                             <td>{{sp.gia}}</td>
                             <td>{{sp.gia*sp.soluong}}</td>
                             <td></td>
-                            <td><button class="btn btn-danger remove-button"  ng-click="xoaSanPham(sp)">Xóa</button></td>
+                            <td><button class="btn btn-danger remove-button" data-bs-toggle="modal" data-bs-target="#exampleModalDelete">Xóa</button></td>
                         </tr>  
                     </tbody>
                 </table>
@@ -42,8 +42,8 @@
         </section>
         <div class="col-md-1"></div>
         <section class="cart-summary pt-3 col-md-3">
-            <h2 class="mb-3">Cart Summary</h2>
-            <p>Total: {{tinhTongThanhTien()}}đ</p>
+            <h2 class="mb-3">Tổng Thành Tiền</h2>
+            <p>Tổng tiền: {{tinhTongThanhTien()}}đ</p>
             <button class="btn btn-success checkout-button">Checkout</button>
         </section>
     </main>

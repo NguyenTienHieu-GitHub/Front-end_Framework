@@ -29,17 +29,32 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('homeCtrl', function ($scope,) {
-
+  var gioiHan=8;  
+  $scope.phanTrang ={
+       gioiHan:gioiHan,
+      sotrang: Math.ceil($scope.sanPham.length /gioiHan),
+      dangChon: 1,  
+    };
+    $scope.changePage = function(newPage) {
+      if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
+          $scope.phanTrang.dangChon = newPage;
+      }
+    };
 });
 app.controller('shopSingleCtrl', function ($scope,) {
 
 });
 app.controller('shopCtrl', function ($scope,) {
-  var gioiHan=6;  
+  var gioiHan=9;  
   $scope.phanTrang ={
        gioiHan:gioiHan,
       sotrang: Math.ceil($scope.sanPham.length /gioiHan),
       dangChon: 1,
+    };
+    $scope.changePage = function(newPage) {
+      if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
+          $scope.phanTrang.dangChon = newPage;
+      }
     };
 });
 app.controller('loginCtrl', function ($scope,) {

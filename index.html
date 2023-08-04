@@ -83,38 +83,42 @@
 
 				<div class="navbar d-flex align-items-center">
 					<div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto me-3">
-					  <div class="input-group">
-						<input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
-						<div class="input-group-text">
-						  <i class="fa fa-fw fa-search"></i>
+						<div class="input-group">
+							<input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+							<div class="input-group-text">
+								<i class="fa fa-fw fa-search"></i>
+							</div>
 						</div>
-					  </div>
 					</div>
-					<a class="nav-icon d-none d-lg-inline me-4" href="#" data-bs-toggle="modal" data-bs-target="#search">
-					  <i class="fa fa-fw fa-search text-dark"></i>
+					<a class="nav-icon d-none d-lg-inline me-4" href="#" data-bs-toggle="modal"
+						data-bs-target="#search">
+						<i class="fa fa-fw fa-search text-dark"></i>
 					</a>
 
 					<a class="nav-icon position-relative text-decoration-none me-2" href="#!shopingCart">
-					  <i class="fa fa-fw fa-cart-arrow-down text-dark"></i>
-					  <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{tinhSoLuong()}}</span>
+						<i class="fa fa-fw fa-cart-arrow-down text-dark"></i>
+						<span
+							class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{tinhSoLuong()}}</span>
 					</a>
 
 					<ul class="nav nav-pills nav-icon text-decoration-none">
-					  <li class="nav-item dropdown me-3">
-						<a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
-						  <i class="fa fa-fw fa-user text-dark"></i>
-						</a>
-						<ul class="dropdown-menu">
-						  <li><a class="dropdown-item" href="#!login">Đăng nhập</a></li>
-						  <li><a class="dropdown-item" href="#">Đăng ký</a></li>
-						  <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
-						  <li><hr class="dropdown-divider"></li>
-						  <li><a class="dropdown-item" href="#">Quản lý account</a></li>
-						</ul>
-					  </li>
+						<li class="nav-item dropdown me-3">
+							<a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+								<i class="fa fa-fw fa-user text-dark"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#!login">Đăng nhập</a></li>
+								<li><a class="dropdown-item" href="#">Đăng ký</a></li>
+								<li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item" href="#">Quản lý account</a></li>
+							</ul>
+						</li>
 					</ul>
-				  </div>
-				  
+				</div>
+
 
 
 
@@ -126,7 +130,7 @@
 	</nav>
 	<!--Close Header -->
 
-	<!--Modal-->
+	<!--Modal Tìm kiếm-->
 	<div class="modal fade bg-white" id="search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
@@ -137,7 +141,7 @@
 				<div class="input-group mb-2">
 					<input ng-model="keyword" type="text" class="form-control" id="inputModalSearch" name="q"
 						placeholder="Search ...">
-					<button type="submit" class="input-group-text bg-success text-light">
+					<button type="submit" class="input-group-text bg-success text-light" data-bs-dismiss="modal" aria-label="Close">
 						<i class="fa fa-fw fa-search text-white"></i>
 					</button>
 				</div>
@@ -145,6 +149,37 @@
 		</div>
 	</div>
 
+	<!-- Modal thông báo -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">	
+				<div class="modal-body">
+					<div class="mb-5 mt-3 text-center">Bạn đã thêm sản phẩm thành công!</div>
+					<div class="text-center">
+					<button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">OK</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal thông báo xóa sản phẩm -->
+	<div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">Thông báo</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Bạn có chắc muốn xóa sản phẩm khỏi giỏ hàng!
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal"  ng-repeat="sp in gioHang" ng-click="xoaSanPham(sp)">Xóa</button>
+					<button type="button" class="btn btn-success" data-bs-dismiss="modal" aria-label="Close">Hủy</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div ng-view></div>
 
