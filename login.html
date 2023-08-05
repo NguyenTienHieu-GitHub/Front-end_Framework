@@ -1,105 +1,50 @@
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-
-  .login-wrap {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .social-icon {
-    width: 40px;
-    height: 40px;
-    background-color: #007bff;
-    border-radius: 50%;
-    color: #ffffff;
-    margin: 0 5px;
-    transition: background-color 0.3s;
-  }
-
-  .social-icon:hover {
-    background-color: #0056b3;
-  }
-
-  .signin-form {
-    margin-top: 20px;
-  }
-
-  .form-label {
-    font-weight: bold;
-  }
-
-  .form-control {
-    border-radius: 5px;
-  }
-
-  .btn-primary {
-    background-color: #007bff;
-    border: none;
-    transition: background-color 0.3s;
-  }
-
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-
-  .form-check-input:checked {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-
-  .text-md-end {
-    margin-top: 10px;
-  }
-</style>
-
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10">
-    <div class="d-md-flex wrap">
-      <div class="img" style="background-image: url(images/bg-1.jpg);"></div>
-      <div class="login-wrap p-4 p-md-5">
-        <div class="d-flex">
-          <div class="w-100">
-            <h3 class="mb-4">Sign In</h3>
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form>
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form1Example13" class="form-control form-control-lg" />
+            <label class="form-label" for="form1Example13">Email address</label>
           </div>
-          <div class="w-100 text-end">
-            <p class="social-media d-flex">
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center">
-                <span class="fa fa-facebook"></span>
-              </a>
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center">
-                <span class="fa fa-twitter"></span>
-              </a>
-            </p>
+
+          <!-- Password input -->
+          <div class="form-outline mb-4">
+            <input type="password" id="form1Example23" class="form-control form-control-lg" />
+            <label class="form-label" for="form1Example23">Password</label>
           </div>
-        </div>
-        <form action="#" class="signin-form">
-          <div class="mb-3">
-            <label class="form-label" for="name">Username</label>
-            <input type="text" class="form-control" placeholder="Username" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
-            <input type="password" class="form-control" placeholder="Password" required>
-          </div>
-          <div class="mb-3">
-            <button type="submit" class="btn btn-primary rounded px-3">Sign In</button>
-          </div>
-          <div class="d-md-flex justify-content-between">
+
+          <div class="d-flex justify-content-around align-items-center mb-4">
+            <!-- Checkbox -->
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="rememberMe" checked>
-              <label class="form-check-label" for="rememberMe">Remember Me</label>
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+              <label class="form-check-label" for="form1Example3"> Remember me </label>
             </div>
-            <div class="text-md-end">
-              <a href="#">Forgot Password</a>
-            </div>
+            <a href="#!">Forgot password?</a>
           </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="#!"
+            role="button">
+            <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+          </a>
+          <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee" href="#!"
+            role="button">
+            <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
+
         </form>
-        <p class="text-center">Not a member? <a data-bs-toggle="tab" href="#signup">Sign Up</a></p>
       </div>
     </div>
   </div>
-</div>
+</section>

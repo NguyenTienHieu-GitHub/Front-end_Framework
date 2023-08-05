@@ -29,17 +29,17 @@ app.config(function ($routeProvider) {
 });
 
 app.controller('homeCtrl', function ($scope,) {
-  var gioiHan=8;  
-  $scope.phanTrang ={
-       gioiHan:gioiHan,
-      sotrang: Math.ceil($scope.sanPham.length /gioiHan),
-      dangChon: 1,  
-    };
-    $scope.changePage = function(newPage) {
-      if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
-          $scope.phanTrang.dangChon = newPage;
-      }
-    };
+  var gioiHan = 8;
+  $scope.phanTrang = {
+    gioiHan: gioiHan,
+    sotrang: Math.ceil($scope.sanPham.length / gioiHan),
+    dangChon: 1,
+  };
+  $scope.changePage = function (newPage) {
+    if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
+      $scope.phanTrang.dangChon = newPage;
+    }
+  };
 });
 app.controller('shopSingleCtrl', function ($scope,) {
 
@@ -97,12 +97,20 @@ app.controller("myctrl", function ($scope, $http) {
     }
     return sum;
   };
+
+  $scope.showThongBaoXoa = function (sp) {
+    $scope.sanPham = sp;
+    $('#exampleModalDelete').modal('show');
+  };
+
   $scope.xoaSanPham = function (sanPham) {
-    var index = $scope.gioHang.indexOf(sanPham);
+    var index = $scope.gioHang.indexOf($scope.sanPham);
     if (index !== -1) {
       $scope.gioHang.splice(index, 1);
     }
+    $('#exampleModalDelete').modal('hide');
   };
+
   /*
   //Cách 2 JS Cơ bản
 
