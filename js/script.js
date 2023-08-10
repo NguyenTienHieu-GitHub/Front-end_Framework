@@ -28,7 +28,7 @@ app.config(function ($routeProvider) {
     });
 });
 
-app.controller('homeCtrl', function ($scope,) {
+app.controller("homeCtrl", function ($scope) {
   var gioiHan = 8;
   $scope.phanTrang = {
     gioiHan: gioiHan,
@@ -41,28 +41,22 @@ app.controller('homeCtrl', function ($scope,) {
     }
   };
 });
-app.controller('shopSingleCtrl', function ($scope,) {
-
+app.controller("shopSingleCtrl", function ($scope) {});
+app.controller("shopCtrl", function ($scope) {
+  var gioiHan = 9;
+  $scope.phanTrang = {
+    gioiHan: gioiHan,
+    sotrang: Math.ceil($scope.sanPham.length / gioiHan),
+    dangChon: 1,
+  };
+  $scope.changePage = function (newPage) {
+    if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
+      $scope.phanTrang.dangChon = newPage;
+    }
+  };
 });
-app.controller('shopCtrl', function ($scope,) {
-  var gioiHan=9;  
-  $scope.phanTrang ={
-       gioiHan:gioiHan,
-      sotrang: Math.ceil($scope.sanPham.length /gioiHan),
-      dangChon: 1,
-    };
-    $scope.changePage = function(newPage) {
-      if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
-          $scope.phanTrang.dangChon = newPage;
-      }
-    };
-});
-app.controller('loginCtrl', function ($scope,) {
-
-});
-app.controller('shopingCartCtrl', function ($scope,) {
-
-});
+app.controller("loginCtrl", function ($scope) {});
+app.controller("shopingCartCtrl", function ($scope) {});
 
 app.controller("myctrl", function ($scope, $http) {
   $scope.gioHang = [];
@@ -98,6 +92,7 @@ app.controller("myctrl", function ($scope, $http) {
     return sum;
   };
 
+
   $scope.showThongBaoXoa = function (sp) {
     $scope.sanPham = sp;
     $('#exampleModalDelete').modal('show');
@@ -110,6 +105,33 @@ app.controller("myctrl", function ($scope, $http) {
     }
     $('#exampleModalDelete').modal('hide');
   };
+  
+
+  $scope.sapXep = 'tang';
+  $scope.sapXepSanPham = function() {
+    if ($scope.sapXep === 'tang') {
+        $scope.sanPham.sort(function(a, b) {
+            return a.gia - b.gia;
+        });
+    } else if ($scope.sapXep === 'giam') {
+        $scope.sanPham.sort(function(a, b) {
+            return b.gia - a.gia;
+        });
+    }
+};
+
+  // $scope.showThongBaoXoa = function (sp) {
+  //   $scope.sanPham = sp;
+  //   $("#exampleModalDelete").modal("show");
+  // };
+
+  // $scope.xoaSanPham = function (sanPham) {
+  //   var index = $scope.gioHang.indexOf(sanPham);
+  //   if (index !== -1) {
+  //     $scope.gioHang.splice(index, 1);
+  //   }
+  //   $("#exampleModalDelete").modal("hide");
+  // };
 
   /*
   //Cách 2 JS Cơ bản

@@ -1,7 +1,6 @@
 <!-- Start Content -->
-<div class="container py-5">
+<div class="container py-5" ng-controller="shopCtrl">
 	<div class="row">
-
 		<div class="col-lg-3">
 			<h1 class="h2 pb-4">THƯ MỤC</h1>
 			<div class="accordion" id="accordionExample">
@@ -77,10 +76,10 @@
 				</div>
 				<div class="col-md-6 pb-4">
 					<div class="d-flex">
-						<select class="form-control">
-							<option>Lọc</option>
-							<option class="" ng-click="sapxep='gia'">Thấp -> Cao</option>
-							<option class="" ng-click="sapxep='-gia'">Cao -> Thấp</option>
+						<select class="form-control" id="sort" ng-model="sapXep" ng-change="sapXepSanPham()">
+							<option value="">Lọc</option>
+							<option value="tang" class="" >Thấp -> Cao</option>
+							<option value="giam" class="" >Cao -> Thấp</option>
 							<option>Đánh giá</option>
 						</select>
 					</div>
