@@ -4,17 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ASMGD1</title>
+	<title>BookWoven</title>
 
 	<link rel="stylesheet" href="bootstrap-5.3.0-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="bootstrap-5.3.0-dist/js/bootstrap.bundle.js">
 	<link rel="stylesheet" href="bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js">
 	<link rel="stylesheet" href="./css/style.css">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
 
 	<script src="https://kit.fontawesome.com/bcd15b30db.js" crossorigin="anonymous"></script>
 	<script src="bootstrap-5.3.0-dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Font Awesome -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+	<!-- MDB -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
 
 	<script src="./js/angular.min.js"></script>
 	<script src="./js/angular-route.min.js"></script>
@@ -33,7 +42,7 @@
 					<i class="fa fa-phone mx-2"></i>
 					<a class="navbar-sm-brand text-light text-decoration-none" href="tel:+84975515940">+84975515940</a>
 				</div>
-				<div>
+				<div class="pe-5">
 					<a class="text-light" href="https://fb.com/nguyentienhieu.profile" target="_blank"
 						rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
 					<a class="text-light" href="https://www.instagram.com/" target="_blank"><i
@@ -66,21 +75,22 @@
 				<div class="flex-fill">
 					<ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
 						<li class="nav-item">
-							<a class="nav-link" href="#!home">Home</a>
+							<a class="nav-link" href="#!home">Trang chủ</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="#">Giới thiệu</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#!shop">Shop</a>
+							<a class="nav-link" href="#!shop">Sản phẩm</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Contact</a>
+							<a class="nav-link" href="#">Liên hệ</a>
 						</li>
 					</ul>
 				</div>
-				<div class="navbar align-self-center d-flex">
-					<div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+
+				<div class="nav d-flex align-items-center">
+					<div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto me-3">
 						<div class="input-group">
 							<input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
 							<div class="input-group-text">
@@ -88,28 +98,66 @@
 							</div>
 						</div>
 					</div>
-					<a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" ng-model="keyword" data-bs-target="#search">
-						<i class="fa fa-fw fa-search text-dark mr-2"></i>
+					<a class="nav-icon d-none d-lg-inline me-4" href="#" data-bs-toggle="modal"
+						data-bs-target="#exampleModalSearch">
+						<i class="fa fa-fw fa-search text-dark"></i>
 					</a>
-					<a class="nav-icon position-relative text-decoration-none" href="#!shopingCart">
-						<i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+
+					<a class="nav-icon position-relative text-decoration-none me-2" href="#!shopingCart">
+						<i class="fa fa-fw fa-cart-arrow-down text-dark"></i>
 						<span
 							class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{tinhSoLuong()}}</span>
 					</a>
-					<a class="nav-icon position-relative text-decoration-none" href="#">
-						<i class="fa fa-fw fa-user text-dark mr-3"></i>
-						<span
-							class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">7</span>
-					</a>
+
+					<ul class="nav nav-icon text-decoration-none">
+						<li class="nav-item dropdown me-3">
+							<a class="nav-link" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+								<i class="fa fa-fw fa-user text-dark"></i>
+							</a>
+							<ul class="dropdown-menu">
+								<li data-bs-toggle="modal" data-bs-target="#exampleModalLogin"><a
+										class="dropdown-item">Đăng nhập</a></li>
+								<li><a class="dropdown-item" href="#">Đăng ký</a></li>
+								<li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+								<li>
+									<hr class="dropdown-divider">
+								</li>
+								<li><a class="dropdown-item" href="#">Quản lý account</a></li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</div>
+		</div>
 
 		</div>
 	</nav>
 	<!--Close Header -->
 
-	<!--Modal-->
-	<div class="modal fade bg-white" id="search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	<!--Modal Tìm kiếm-->
+	<div class="modal fade bg-white" id="exampleModalSearch" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+				<div class="w-100 pt-1 mb-5 text-end">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+			</div>
+				<div class="modal-body">
+					<form action="" method="get" class="modal-content modal-body border-0 p-0">
+						<div class="input-group mb-2">
+							<input ng-model="keyword" type="text" class="form-control" id="inputModalSearch" name="q"
+								placeholder="Tìm kiếm">
+							<p type="button" class="input-group-text bg-success text-light">
+								<i class="fa fa-fw fa-search text-white"></i>
+							</p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="modal fade bg-white" id="search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 		aria-hidden="true">
 		<div class="modal-dialog modal-lg" role="document">
 			<div class="w-100 pt-1 mb-5 text-end">
@@ -117,17 +165,127 @@
 			</div>
 			<form action="" method="get" class="modal-content modal-body border-0 p-0">
 				<div class="input-group mb-2">
-					<input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
-					<button type="submit" class="input-group-text bg-success text-light">
+					<input ng-model="keyword" type="text" class="form-control" id="inputModalSearch" name="q"
+						placeholder="Tìm kiếm">
+					<button type="submit" class="input-group-text bg-success text-light" data-bs-dismiss="modal"
+						aria-label="Close">
 						<i class="fa fa-fw fa-search text-white"></i>
 					</button>
 				</div>
 			</form>
 		</div>
+	</div> -->
+
+
+
+	<!-- Modal login-->
+	<div class="modal fade" id="exampleModalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+
+				<div class="modal-body">
+					<!-- Pills navs -->
+					<form>
+						<h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+						<!-- Email input -->
+						<div class="form-outline mb-4">
+							<label class="form-label" for="form2Example1">Email address</label>
+							<input type="email" id="form2Example1" class="form-control border-light" />
+
+						</div>
+
+						<!-- Password input -->
+						<div class="form-outline mb-4">
+							<label class="form-label" for="form2Example2">Password</label>
+							<input type="password" id="form2Example2" class="form-control" />
+
+						</div>
+
+						<!-- 2 column grid layout for inline styling -->
+						<div class="row mb-4">
+							<div class="col d-flex justify-content-center">
+								<!-- Checkbox -->
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" value="" id="form2Example31"
+										checked />
+									<label class="form-check-label" for="form2Example31"> Remember me </label>
+								</div>
+							</div>
+
+							<div class="col">
+								<!-- Simple link -->
+								<a href="#!">Forgot password?</a>
+							</div>
+						</div>
+
+						<!-- Submit button -->
+						<button type="button" class="btn btn-success btn-block mb-4">Sign in</button>
+
+						<!-- Register buttons -->
+						<div class="text-center">
+							<p>Not a member? <a href="#!">Register</a></p>
+							<p>or sign up with:</p>
+							<button type="button" class="text-light btn btn-link btn-success mx-1">
+								<i class="fab fa-facebook-f"></i>
+							</button>
+
+							<button type="button" class="text-light btn btn-link btn-success mx-1">
+								<i class="fab fa-google"></i>
+							</button>
+
+							<button type="button" class="text-light btn btn-link btn-success mx-1">
+								<i class="fab fa-twitter"></i>
+							</button>
+
+							<button type="button" class="text-light btn btn-link btn-success mx-1">
+								<i class="fab fa-github"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
 	</div>
 
 
-	<ng-view></ng-view>
+	<!-- Modal thông báo -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div class="mb-5 mt-3 text-center">Bạn đã thêm sản phẩm thành công!</div>
+					<div class="text-center">
+						<button type="button" class="btn btn-success" data-bs-dismiss="modal"
+							aria-label="Close">OK</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal Xóa Sản Phẩm -->
+	<div class="modal fade" id="exampleModalDelete" tabindex="-1" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					Bạn có chắc muốn xóa sản phẩm "{{ sanPham.ten }}"?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"
+						ng-click="xoaSanPham(sp)">Xóa</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div ng-view></div>
 
 	<!-- Start Footer -->
 	<footer class="bg-dark" id="footer_css">
@@ -154,26 +312,26 @@
 				</div>
 
 				<div class="col-md-4 pt-5">
-					<h2 class="h2 text-light border-bottom pb-3 border-light">Products</h2>
+					<h2 class="h2 text-light border-bottom pb-3 border-light">Thể loại sách</h2>
 					<ul class="list-unstyled text-light footer-link-list">
-						<li><a class="text-decoration-none text-light" href="#">Luxury</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Sport Wear</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Men's Shoes</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Women's Shoes</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Popular Dress</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Gym Accessories</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Sport Shoes</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Công nghệ thông tin</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Học ngoại ngữ</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Huyền bí - Giả tưởng</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Khoa học - Kỹ thuật</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Lịch sử - Trính trị</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Thể thao - Nghệ thuật</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Tâm lý - Kỹ năng sống</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-4 pt-5">
-					<h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+					<h2 class="h2 text-light border-bottom pb-3 border-light">Menu</h2>
 					<ul class="list-unstyled text-light footer-link-list text-light">
-						<li><a class="text-decoration-none text-light" href="#">Home</a></li>
-						<li><a class="text-decoration-none text-light" href="#">About Us</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Shop Locations</a></li>
-						<li><a class="text-decoration-none text-light" href="#">FAQs</a></li>
-						<li><a class="text-decoration-none text-light" href="#">Contact</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Trang chủ</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Giới thiệu</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Sản phẩm</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Hỏi đáp</a></li>
+						<li><a class="text-decoration-none text-light" href="#">Liên hệ</a></li>
 					</ul>
 				</div>
 
@@ -208,7 +366,7 @@
 					<div class="input-group mb-2">
 						<input type="text" class="form-control bg-dark border-light text-light" id="subscribeEmail"
 							placeholder="Email address">
-						<div class="input-group-text btn btn-success text-dark">Subscribe</div>
+						<div class="input-group-text btn btn-success text-dark">Đăng ký</div>
 					</div>
 				</div>
 			</div>

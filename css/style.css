@@ -162,5 +162,66 @@ body, ul, li, p, a, label, input, div {
 @media (min-width: 1200px) {}
 
 .cart-image {
-  max-width: 100px;
+  max-width: 200px;
 }
+
+/* Form login */
+.login-wrap {
+  background-color: #ffffff;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #68bb7d;
+  border-radius: 50%;
+  color: #dcdde1;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.social-icon:hover {
+  background-color: #dcdde1;
+  color: #68bb7d;
+}
+
+.signin-form {
+  margin-top: 20px;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.form-check-input:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.text-md-end {
+  margin-top: 10px;
+}
+
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+

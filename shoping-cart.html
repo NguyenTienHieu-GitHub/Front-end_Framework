@@ -1,41 +1,49 @@
-
-    <div class="container">
+<div class="container" ng-controller="shopingCartCtrl">
         
     <header class="mt-5 text-dark py-3">
-        <h1 class="text-center">Your Shopping Cart</h1>
+        <h1 class="text-center">Giỏ Hàng Của Bạn</h1>
     </header>
     <main class="my-4 row" >
         <section class="cart-items col-md-8 me-0">
-            <table class="table text-center" >
-                <thead>
-                    <tr>
-                        <th scope="col">STT</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Total</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="sp in gioHang">
-                        <td>{{$index +1 }}</td>
-                        <td><img src="{{sp.hinh}}" alt="Product 1" class="img-fluid cart-image"></td>
-                        <td>{{sp.ten}}</td>
-                        <td><input type="number" ng-model="sp.soluong"></td>
-                        <td>{{sp.gia}}</td>
-                        <td>{{sp.gia*sp.soluong}}</td>
-                        <td><button class="btn btn-danger remove-button" ng-click="xoaSanPham(sp)">Xóa</button></td>
-                    </tr>
-                    <!-- Add more cart items here -->
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table text-center" >
+                    <thead>
+                        <tr>
+                            <th scope="col">STT</th>
+                            <th scope="col">Sản phẩm</th>
+                            <th scope="col">Tên</th>
+                            <th scope="col">Số lượng</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Thành tiền</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="sp in gioHang">
+                            <td>{{$index +1 }}</td>
+                            <td><a href="#!shopSingle"><img src="{{sp.hinh}}" alt="Product" class="img-fluid cart-image"></a></td>
+                            <td>{{sp.ten}}</td>
+                            <td>
+                                <div class="d-flex">
+                                <button class="btn btn-success checkout-button" ng-click="sp.soluong = sp.soluong - 1" ng-disabled="sp.soluong <= 1">-</button>
+                                <input type="number" class="form-control text-center" style="width: 100px" ng-model="sp.soluong">
+                                <button class="btn btn-success checkout-button" ng-click="sp.soluong = sp.soluong + 1">+</button>
+                            </div>
+                            </td>
+                            <td>{{sp.gia}}</td>
+                            <td>{{sp.gia*sp.soluong}}</td>
+                            <td></td>
+                            <td><button class="btn btn-danger remove-button" data-bs-toggle="modal" data-bs-target="#exampleModalDelete" ng-click="showThongBaoXoa(sp)">Xóa</button></td>
+                        </tr>  
+                    </tbody>
+                </table>
+            </div>
         </section>
         <div class="col-md-1"></div>
         <section class="cart-summary pt-3 col-md-3">
-            <h2 class="mb-3">Cart Summary</h2>
-            <p>Total: {{tinhTongThanhTien()}}đ</p>
+            <h2 class="mb-3">Tổng Thành Tiền</h2>
+            <p>Tổng tiền: {{tinhTongThanhTien()}}đ</p>
             <button class="btn btn-success checkout-button">Checkout</button>
         </section>
     </main>

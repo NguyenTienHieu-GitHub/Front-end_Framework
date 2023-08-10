@@ -3,19 +3,23 @@ var app = angular.module("myapp", ["ngRoute"]);
 app.config(function ($routeProvider) {
   $routeProvider
     .when("/home", {
-      templateUrl: "home.html",
+      templateUrl: "home.html?" + Math.random(),
       controller: "homeCtrl",
     })
     .when("/shopSingle", {
-      templateUrl: "shop-single.html",
+      templateUrl: "shop-single.html?" + Math.random(),
       controller: "shopSingleCtrl",
     })
     .when("/shop", {
-      templateUrl: "shop.html",
+      templateUrl: "shop.html?" + Math.random(),
       controller: "shopCtrl",
     })
+    .when("/login", {
+      templateUrl: "login.html?" + Math.random(),
+      controller: "loginCtrl",
+    })
     .when("/shopingCart", {
-      templateUrl: "shoping-cart.html",
+      templateUrl: "shoping-cart.html?" + Math.random(),
       controller: "shopingCartCtrl",
     })
     .otherwise({
@@ -24,8 +28,37 @@ app.config(function ($routeProvider) {
     });
 });
 
+app.controller("homeCtrl", function ($scope) {
+  var gioiHan = 8;
+  $scope.phanTrang = {
+    gioiHan: gioiHan,
+    sotrang: Math.ceil($scope.sanPham.length / gioiHan),
+    dangChon: 1,
+  };
+  $scope.changePage = function (newPage) {
+    if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
+      $scope.phanTrang.dangChon = newPage;
+    }
+  };
+});
+app.controller("shopSingleCtrl", function ($scope) {});
+app.controller("shopCtrl", function ($scope) {
+  var gioiHan = 9;
+  $scope.phanTrang = {
+    gioiHan: gioiHan,
+    sotrang: Math.ceil($scope.sanPham.length / gioiHan),
+    dangChon: 1,
+  };
+  $scope.changePage = function (newPage) {
+    if (newPage >= 1 && newPage <= $scope.phanTrang.sotrang) {
+      $scope.phanTrang.dangChon = newPage;
+    }
+  };
+});
+app.controller("loginCtrl", function ($scope) {});
+app.controller("shopingCartCtrl", function ($scope) {});
+
 app.controller("myctrl", function ($scope, $http) {
-  //
   $scope.gioHang = [];
   $scope.sanPham = [];
   $http.get("./js/data.json").then(function (sanPham) {
@@ -43,18 +76,6 @@ app.controller("myctrl", function ($scope, $http) {
     }
     console.log($scope.gia);
   };
-  //search
-  $scope.keyword = "";
-  $http.get("./js/data.json").then(
-    function (res) {
-      //Chạy đúng
-      $scope.sanPham = res.data;
-    },
-    function (res) {
-      //BỊ lối
-      console.log(res);
-    }
-  );
   $scope.tinhSoLuong = function () {
     var sum = 0;
     for (sp of $scope.gioHang) {
@@ -70,40 +91,77 @@ app.controller("myctrl", function ($scope, $http) {
     }
     return sum;
   };
+
+
+  $scope.showThongBaoXoa = function (sp) {
+    $scope.sanPham = sp;
+    $('#exampleModalDelete').modal('show');
+  };
+
   $scope.xoaSanPham = function (sanPham) {
-    var index = $scope.gioHang.indexOf(sanPham);
+    var index = $scope.gioHang.indexOf($scope.sanPham);
     if (index !== -1) {
-        $scope.gioHang.splice(index, 1);
+      $scope.gioHang.splice(index, 1);
+    }
+    $('#exampleModalDelete').modal('hide');
+  };
+  
+
+  $scope.sapXep = 'tang';
+  $scope.sapXepSanPham = function() {
+    if ($scope.sapXep === 'tang') {
+        $scope.sanPham.sort(function(a, b) {
+            return a.gia - b.gia;
+        });
+    } else if ($scope.sapXep === 'giam') {
+        $scope.sanPham.sort(function(a, b) {
+            return b.gia - a.gia;
+        });
     }
 };
+
+  // $scope.showThongBaoXoa = function (sp) {
+  //   $scope.sanPham = sp;
+  //   $("#exampleModalDelete").modal("show");
+  // };
+
+  // $scope.xoaSanPham = function (sanPham) {
+  //   var index = $scope.gioHang.indexOf(sanPham);
+  //   if (index !== -1) {
+  //     $scope.gioHang.splice(index, 1);
+  //   }
+  //   $("#exampleModalDelete").modal("hide");
+  // };
+
+  /*
+  //Cách 2 JS Cơ bản
+
+  var daCoSP = true;
+  var iSP = 0;
+
+  for (sp of $scope.gioHang) {
+    if (sp.id == sanPham.id) {
+      daCoSP = true;
+      break;
+    }
+    if (!daCoSP) {
+      sanPham.soluong = 1;
+      $scope.gioHang.push(sanPham);
+    }
+    else {
+      $scope.gioHang[iSP].soluong++;
+    }
+  }
+  */
+  $scope.keyword = "";
+  $http.get("./js/data.json").then(
+    function (res) {
+      //Chạy đúng
+      $scope.sanPham = res.data;
+    },
+    function (res) {
+      //BỊ lối
+      console.log(res);
+    }
+  );
 });
-
-app.controller("homeCtrl", [
-  "$scope",
-  function ($scope) {
-    // Controller logic for homeCtrl
-  },
-]);
-
-app.controller("shopSingleCtrl", [
-  "$scope",
-  "$routeParams",
-  function ($scope, $routeParams) {
-    var id = $routeParams.id;
-    // Controller logic for shopSingleCtrl using the 'id' parameter
-  },
-]);
-
-app.controller("shopCtrl", [
-  "$scope",
-  function ($scope, $http) {
-    // Controller logic for shopCtrl
-  },
-]);
-
-app.controller("shoppingCartCtrl", [
-  "$scope",
-  function ($scope) {
-    // Controller logic for shoppingCartCtrl
-  },
-]);

@@ -1,158 +1,182 @@
-	<!--Banner-->
-	<div id="carouselExampleCaptions" class="carousel slide">
-		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-				aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-				aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-				aria-label="Slide 3"></button>
-		</div>
-		<div class="carousel-inner" style="background: #efefef !important;">
-			<div class="carousel-item active">
-				<div class="container">
-					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img src="./img/Banner-sach-1-removebg-preview.png" class="img-fluid" alt="...">
-						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center">
-							<div class="text-align-left align-self-center row">
-								<h1 class="h1 text-success">TechNeek</h1>
-								<h3 class="h2">Sách vươn xa</h3>
-								<p>
-									Hãy đọc sách để có cuộc sống của riêng bạn mà không cần sống bởi cuộc sống của người khác.
-								</p>
-								<div class="col-3"></div>
-								<button class="btn btn-success col-3 py-3"><a
-										class="text-decoration-none text-white" href="shop.html">Shop Now</a></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<div class="container">
-					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img src="img/Banner-sach-2-removebg-preview.png" class="img-fluid" alt="...">
-						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center">
-							<div class="text-align-left align-self-center  row">
-								<h1 class="h1 text-success">BookWoven</h1>
-								<h3 class="h2">Sách giáo khoa</h3>
-								<p>
-									Sách là những người bạn không bao giờ phản bội bạn, những người bạn luôn luôn sẵn sàng chia sẻ tri thức và trải nghiệm.
-								</p>
-								<div class="col-3"></div>
-								<button class="btn btn-success col-3 py-3"><a
-										class="text-decoration-none text-white" href="shop.html">Shop Now</a></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<div class="container">
-					<div class="row p-5">
-						<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-							<img src="img/Banner-sach-3-removebg-preview.png" class="img-fluid" alt="...">
-						</div>
-						<div class="col-lg-6 mb-0 d-flex align-items-center">
-							<div class="text-align-left align-self-center  row">
-								<h1 class="h1 text-success">H!U Shop</h1>
-								<h3 class="h2">Sách là tương lai</h3>
-								<p>
-									Sách không chỉ cung cấp kiến thức, mà còn là nguồn cảm hứng và sức mạnh để thay đổi thế giới.
-								</p>
-								<div class="col-3"></div>
-								<button class="btn btn-success col-3 py-3"><a
-										class="text-decoration-none text-white" href="shop.html">Shop Now</a></button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-			data-bs-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-			data-bs-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
+<!--Banner-->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel"
+data-bs-interval="2000">
+	<div class="carousel-indicators">
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+			aria-current="true" aria-label="Slide 1"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+			aria-label="Slide 2"></button>
+		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+			aria-label="Slide 3"></button>
 	</div>
-	<!--End banner-->
-	
-	<!-- Start Featured Product -->
-	<section class="bg-light">
-		<div class="container py-5">
-			<div class="row text-center py-3">
-				<div class="col-lg-6 m-auto">
-					<h1 class="h1">Product</h1>
-					<p>
-						Đọc sách giúp bạn bay xa, tìm hiểu thế giới và tìm kiếm câu trả lời cho những câu hỏi của cuộc sống.
-					</p>
-				</div>
-			</div>
-			<div class="row"  >
-				<div class="col-lg-12">
-					<div class="row">
-						<div class="col-md-4" ng-repeat="sp in sanPham">
-							<div class="card mb-4 product-wap rounded-0" >
-								<div class="card rounded-0">
-									<img class="card-img rounded-0 img-fluid" src="{{sp.hinh}}">
-									<div
-										class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-										<ul class="list-unstyled">
-											<li><a class="btn btn-success text-white" href="#!shopingCart"><i
-														class="far fa-heart"></i></a></li>
-											<li><a class="btn btn-success text-white mt-2" href="#!shopingCart"><i
-														class="far fa-eye"></i></a></li>
-											<li><a class="btn btn-success text-white mt-2" href="#!shopingCart"><i
-														class="fas fa-cart-plus"></i></a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="card-body">
-									<a href="shop-single.html" class="h3 text-decoration-none">{{sp.ten}}</a>
-									<ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
-										<li>{{sp.hangMuc}}</li>
-										<li class="pt-2">
-											<span
-												class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
-											<span
-												class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
-											<span
-												class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
-											<span
-												class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
-											<span
-												class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
-										</li>
-									</ul>
-									<ul class="list-unstyled d-flex justify-content-between mb-1">
-										<li>
-											<i class="text-warning fa fa-star"></i>
-											<i class="text-warning fa fa-star"></i>
-											<i class="text-warning fa fa-star"></i>
-											<i class="text-muted fa fa-star"></i>
-											<i class="text-muted fa fa-star"></i>
-										</li>
-									</ul>
-									<p class="mb-0">{{sp.gia}}đ</p>
-								</div>
-							</div>
+	<div class="carousel-inner"  style="background: #efefef !important;">
+		<div class="carousel-item active">
+			<div class="container">
+				<div class="row p-5">
+					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<img src="./img/Banner-sach-1-removebg-preview.png" class="img-fluid" alt="...">
+					</div>
+					<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="text-align-left align-self-center row">
+							<h1 class="h1 text-success">TechNeek</h1>
+							<h3 class="h2">Sách vươn xa</h3>
+							<p>
+								Hãy đọc sách để có cuộc sống của riêng bạn mà không cần sống bởi cuộc sống của người
+								khác.
+							</p>
+							<div class="col-3"></div>
+							<button class="btn btn-success col-3 py-3"><a class="text-decoration-none text-white"
+									href="#!shop">Shop Now</a></button>
 						</div>
 					</div>
-					<div div="row">
-						<a type="button" href="#!shop" class="btn btn-link">Xem thêm...</a>
-					</div>
-				</div>
 				</div>
 			</div>
 		</div>
-	</section>
-	<!-- End Featured Product -->
+		<div class="carousel-item">
+			<div class="container">
+				<div class="row p-5">
+					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<img src="img/Banner-sach-2-removebg-preview.png" class="img-fluid" alt="...">
+					</div>
+					<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="text-align-left align-self-center  row">
+							<h1 class="h1 text-success">BookWoven</h1>
+							<h3 class="h2">Sách giáo khoa</h3>
+							<p>
+								Sách là những người bạn không bao giờ phản bội bạn, những người bạn luôn luôn sẵn sàng
+								chia sẻ tri thức và trải nghiệm.
+							</p>
+							<div class="col-3"></div>
+							<button class="btn btn-success col-3 py-3"><a class="text-decoration-none text-white"
+									href="shop.html">Shop Now</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<div class="container">
+				<div class="row p-5">
+					<div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+						<img src="img/Banner-sach-3-removebg-preview.png" class="img-fluid" alt="...">
+					</div>
+					<div class="col-lg-6 mb-0 d-flex align-items-center">
+						<div class="text-align-left align-self-center  row">
+							<h1 class="h1 text-success">BookWoven</h1>
+							<h3 class="h2">Sách là tương lai</h3>
+							<p>
+								Sách không chỉ cung cấp kiến thức, mà còn là nguồn cảm hứng và sức mạnh để thay đổi thế
+								giới.
+							</p>
+							<div class="col-3"></div>
+							<button class="btn btn-success col-3 py-3"><a class="text-decoration-none text-white"
+									href="#!shop">Shop Now</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+<!--End banner-->
+
+<!-- Start Featured Product -->
+<section class="bg-light">
+	<div class="container py-5">
+		<div class="row text-center py-3">
+			<div class="col-lg-6 m-auto">
+				<h1 class="h1">Product</h1>
+				<p>
+					Đọc sách giúp bạn bay xa, tìm hiểu thế giới và tìm kiếm câu trả lời cho những câu hỏi của cuộc sống.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="row row-cols-2 row-cols-md-4">
+					<div class="col" ng-repeat="sp in sanPham | filter:keyword |orderBy: sapxep| limitTo:phanTrang.gioiHan:(phanTrang.dangChon-1)*phanTrang.gioiHan">
+						<div class="card mb-4 product-wap rounded-0">
+							<div class="card rounded-0">
+								<img class="card-img rounded-0 img-fluid" src="{{sp.hinh}}">
+								<div
+									class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
+									<ul class="list-unstyled">
+										<li><a class="btn btn-success text-white" href="#!shopingCart"><i
+													class="far fa-heart"></i></a></li>
+										<li><a class="btn btn-success text-white mt-2" href="#!shopingCart"><i
+													class="far fa-eye"></i></a></li>
+										<li><a class="btn btn-success text-white mt-2" data-bs-toggle="modal"
+												data-bs-target="#exampleModal" ng-click="themGioHang(sp)"><i
+													class="fas fa-cart-plus"></i></a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="card-body">
+								<a href="#!shopSingle" class="h3 text-decoration-none">{{sp.ten}}</a>
+								<ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
+									<li>{{sp.hangMuc}}</li>
+									<li class="pt-2">
+										<span
+											class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>
+										<span
+											class="product-color-dot color-dot-blue float-left rounded-circle ml-1"></span>
+										<span
+											class="product-color-dot color-dot-black float-left rounded-circle ml-1"></span>
+										<span
+											class="product-color-dot color-dot-light float-left rounded-circle ml-1"></span>
+										<span
+											class="product-color-dot color-dot-green float-left rounded-circle ml-1"></span>
+									</li>
+								</ul>
+								<ul class="list-unstyled d-flex justify-content-between mb-1">
+									<li>
+										<i class="text-warning fa fa-star"></i>
+										<i class="text-warning fa fa-star"></i>
+										<i class="text-warning fa fa-star"></i>
+										<i class="text-muted fa fa-star"></i>
+										<i class="text-muted fa fa-star"></i>
+									</li>
+								</ul>
+								<p class="mb-0">{{sp.gia}}đ</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<ul class="pagination pagination-lg justify-content-end">
+						<li class="page-item">
+							<a class="page-link text-success rounded-0 mr-3 shadow-sm border-top-0 border-left-0" ng-click="changePage(phanTrang.dangChon - 1)" ng-disabled="phanTrang.dangChon === 1" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li class="page-item" ng-repeat="trang in [].constructor(phanTrang.sotrang) track by $index">
+							<button class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0"
+									ng-class="{ 'active': $index + 1 === phanTrang.dangChon }"
+									ng-click="phanTrang.dangChon = $index + 1">
+								{{$index + 1}}
+							</button>
+						</li>
+						<li class="page-item">
+							<a class="page-link text-success rounded-0 mr-3 shadow-sm border-top-0 border-left-0" ng-click="changePage(phanTrang.dangChon + 1)" ng-disabled="phanTrang.dangChon === phanTrang.sotrang" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+
+	</div>
+</section>
+<!-- End Featured Product -->
